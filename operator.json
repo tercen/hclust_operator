@@ -1,0 +1,45 @@
+{
+  "name": "hclust",
+  "description": "Hierarchical Cluster",
+  "tags": ["multivariate statistics"],
+  "authors": ["tercen"],
+  "urls": ["https://github.com/tercen/hclust_operator"],
+  "properties": [
+  {
+    "kind": "BooleanProperty",
+    "name": "scale",
+    "defaultValue": false,
+    "description": "A logical value indicating whether the variables should be scaled to have unit variance before the analysis takes place."
+  },
+  {
+    "kind": "BooleanProperty",
+    "name": "center",
+    "defaultValue": false,
+    "description": "A logical value indicating whether the variables should be shifted to be zero centered."
+  },
+  {
+    "kind": "EnumeratedProperty",
+    "name": "na.action",
+    "defaultValue": "na.omit",
+    "values": [
+      "na.fail",
+      "na.omit"
+    ],
+    "description": "A function which indicates what should happen when the data contain NAs."
+  },
+  {
+    "kind": "DoubleProperty",
+    "name": "tol",
+    "defaultValue": 0,
+    "description": "A value indicating the magnitude below which components should be omitted. Components are omitted if their standard deviations are less than or equal to tol times the standard deviation of the first component."
+  },
+  {
+    "kind": "DoubleProperty",
+    "name": "maxComp",
+    "defaultValue": 5,
+    "description": "Max number of components"
+  }
+]
+}
+
+
