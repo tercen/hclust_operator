@@ -22,7 +22,7 @@
     "name": "fill",
     "defaultValue": 0.0,
     "description": "Value with which to fill in structural missings."
-  },
+  }
 ]
 }
 
