@@ -19,7 +19,7 @@ packrat::init(options = list(
   use.cache = TRUE
   ))
   
-git add -A && git commit -m "change default value for scale and center" && git tag -a 0.0.10 -m "++" && git push && git push --tags
+git add -A && git commit -m "scale and center" && git tag -a 0.0.2 -m "++" && git push && git push --tags
 ```
 
 ```R
