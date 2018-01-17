@@ -19,7 +19,7 @@ packrat::init(options = list(
   use.cache = TRUE
   ))
   
-git add -A && git commit -m "bad param" && git tag -a 0.0.4 -m "++" && git push && git push --tags
+git add -A && git commit -m "handle center param" && git tag -a 0.0.5 -m "++" && git push && git push --tags
 ```
 
 ```R
