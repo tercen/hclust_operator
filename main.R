@@ -7,14 +7,34 @@ data = (ctx = tercenCtx())  %>%
 
 if (as.logical(ctx$op.value('scale'))) data = t(scale(t(data)))
 
-corder = as.double(hclust(dist(data))$order)
-rorder = as.double(hclust(dist(t(data)))$order)
+corder0 = hclust(dist(data))$order
+roder0 = hclust(dist(t(data)))$order
+ci = seq(from=0,to=length(corder0)-1)
+ri = seq(from=0,to=length(rorder0)-1)
 
-cresult = data.frame(.ci = seq(from=0,to=length(corder)-1),
+
+corder = as.double(ci)
+rorder = as.double(ri)
+
+ci = ci[corder0]
+ri = ri[rorder0]
+
+# corder = as.double(hclust(dist(data))$order)
+# rorder = as.double(hclust(dist(t(data)))$order)
+
+#cresult = data.frame(.ci = seq(from=0,to=length(corder)-1),
+ #                    corder=corder) %>% ctx$addNamespace()
+
+#rresult = data.frame(.ri=seq(from=0,to=length(rorder)-1),
+ #                    rorder=rorder) %>% ctx$addNamespace()
+
+
+cresult = data.frame(.ci = ci,
                      corder=corder) %>% ctx$addNamespace()
 
-rresult = data.frame(.ri=seq(from=0,to=length(rorder)-1),
+rresult = data.frame(.ri=ri,
                      rorder=rorder) %>% ctx$addNamespace()
+
 
 list(cresult, rresult) %>% ctx$save()
 
