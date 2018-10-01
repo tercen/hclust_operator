@@ -20,7 +20,7 @@ Input parameters|.
 Output relations|.
 ---|---
 `rorder`| numeric, order of rows after clustering
-`corder`| character, order of cols after clustering
+`corder`| numeric, order of cols after clustering
 
 ##### Details
 The operator is the `hclust` function of the `base` R package.
