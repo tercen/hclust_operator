@@ -1,7 +1,7 @@
 # hclust operator
 
 #### Description
-`hclust` operator performs the SOM (self organizing maps) in the `hclust` from base R.
+`hclust` operator performs a hierarchical clustering.
 
 ##### Usage
 Input projection|.
@@ -27,7 +27,7 @@ The operator is the `hclust` function of the `base` R package.
 
 
 #### References
-see the `base::hclust` function of the R package for the documentation, 
+see https://en.wikipedia.org/wiki/Hierarchical_clustering
 
 
 ##### See Also
