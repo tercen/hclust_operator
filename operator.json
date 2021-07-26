@@ -1,6 +1,6 @@
 {
-  "name": "hclust",
-  "description": "Hierarchical Cluster",
+  "name": "Hclust - Order",
+  "description": "Hierarchical Clustering: An algorithm that groups data points in levels of similarity returns the order of groups.",
   "tags": ["multivariate statistics"],
   "authors": ["tercen"],
   "urls": ["https://github.com/tercen/hclust_operator"],
