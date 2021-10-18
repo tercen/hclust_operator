@@ -1,7 +1,10 @@
 library(tercen)
 library(dplyr)
- 
-data = (ctx = tercenCtx())  %>% 
+
+ctx <- tercenCtx() 
+
+
+data = ctx %>% 
   select(.ci, .ri, .y) %>% 
   reshape2::acast(.ci ~ .ri, value.var='.y', fill=as.double(ctx$op.value('fill')), fun.aggregate=mean)
 
