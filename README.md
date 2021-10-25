@@ -23,7 +23,7 @@ Output relations|.
 `corder`| numeric, order of cols after clustering
 
 ##### Details
-The operator is the `hclust` function of the `base` R package.
+The operator is the implementation of the `hclust` function of the `base` [R package](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/hclust).
 
 
 #### References
