@@ -18,6 +18,20 @@
     "description": "A logical value indicating whether the variables should be shifted to be zero centered."
   },
   {
+    "kind": "EnumeratedProperty",
+    "name": "method",
+    "defaultValue": "single",
+    "values": ["single", "ward", "centroid", "median"],
+    "description": "A value specifying the clustering method to be used (see hclust R function)."
+  },
+  {
+    "kind": "EnumeratedProperty",
+    "name": "metric",
+    "defaultValue": "euclidean",
+    "values": ["euclidean", "maximum", "manhattan", "canberra", "binary", "minkowski"],
+    "description": "A value specifying the metric to be used (see hclust R function)."
+  },
+  {
     "kind": "DoubleProperty",
     "name": "fill",
     "defaultValue": 0.0,

@@ -1,43 +1,32 @@
 library(tercen)
+library(tercenApi)
 library(dplyr)
+library(reshape2)
+library(fastcluster)
 
 ctx <- tercenCtx() 
 
+do.scale <- ctx$op.value('scale', as.logical, FALSE)
+fill <- ctx$op.value('scale', as.double, 0)
+method <- ctx$op.value('method', as.character, "single")
+metric <- ctx$op.value('metric', as.character, "euclidean")
 
-data = ctx %>% 
-  select(.ci, .ri, .y) %>% 
-  reshape2::acast(.ci ~ .ri, value.var='.y', fill=as.double(ctx$op.value('fill')), fun.aggregate=mean)
+data = ctx %>% as.matrix(fill = fill)
 
-if (as.logical(ctx$op.value('scale'))) data = t(scale(t(data)))
+if(do.scale) data = t(scale(t(data)))
 
-corder0 = hclust(dist(data))$order
-rorder0 = hclust(dist(t(data)))$order
-ci = seq(from=0,to=length(corder0)-1)
-ri = seq(from=0,to=length(rorder0)-1)
+corder0 <- fastcluster::hclust.vector(data, method = method, metric = metric)$order
+rorder0 <- fastcluster::hclust.vector(t(data), method = method, metric = metric)$order
 
+cresult = data.frame(
+  .ci = seq(from = 0, to = length(corder0) - 1),
+  corder = as.double(corder0)
+) %>% ctx$addNamespace()
 
-corder = as.double(ci)
-rorder = as.double(ri)
-
-ci = ci[corder0]
-ri = ri[rorder0]
-
-# corder = as.double(hclust(dist(data))$order)
-# rorder = as.double(hclust(dist(t(data)))$order)
-
-#cresult = data.frame(.ci = seq(from=0,to=length(corder)-1),
- #                    corder=corder) %>% ctx$addNamespace()
-
-#rresult = data.frame(.ri=seq(from=0,to=length(rorder)-1),
- #                    rorder=rorder) %>% ctx$addNamespace()
-
-
-cresult = data.frame(.ci = ci,
-                     corder=corder) %>% ctx$addNamespace()
-
-rresult = data.frame(.ri=ri,
-                     rorder=rorder) %>% ctx$addNamespace()
-
+rresult = data.frame(
+  .ri = seq(from = 0, to = length(rorder0) - 1),
+  rorder = as.double(rorder0)
+) %>% ctx$addNamespace()
 
 list(cresult, rresult) %>% ctx$save()
 
