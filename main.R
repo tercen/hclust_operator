@@ -15,8 +15,8 @@ data = ctx %>% as.matrix(fill = fill)
 
 if(do.scale) data = t(scale(t(data)))
 
-corder0 <- fastcluster::hclust.vector(data, method = method, metric = metric)$order
-rorder0 <- fastcluster::hclust.vector(t(data), method = method, metric = metric)$order
+rorder0 <- fastcluster::hclust.vector(data, method = method, metric = metric)$order
+corder0 <- fastcluster::hclust.vector(t(data), method = method, metric = metric)$order
 
 cresult = data.frame(
   .ci = seq(from = 0, to = length(corder0) - 1),
