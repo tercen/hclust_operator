@@ -1,15 +1,16 @@
-# hclust operator
+# Heatmap Clustering
 
 #### Description
+
 `hclust` operator performs a hierarchical clustering.
 
-##### Usage
+#### Usage
+
 Input projection|.
 ---|---
 `row`   | represents the row data
 `col`   | represents the col data
 `y-axis`| is the value of measurement
-
 
 Input parameters|.
 ---|---
@@ -22,15 +23,10 @@ Output relations|.
 `rorder`| numeric, order of rows after clustering
 `corder`| numeric, order of cols after clustering
 
-##### Details
+#### Details
+
 The operator is the implementation of the [`hclust`](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/hclust) function of the `base` R package.
 
-
 #### References
-see https://en.wikipedia.org/wiki/Hierarchical_clustering
 
-
-##### See Also
-
-
-#### Examples
+See https://en.wikipedia.org/wiki/Hierarchical_clustering
