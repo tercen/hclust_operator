@@ -43,5 +43,9 @@ cresult = data.frame(.ci = ci,
 rresult = data.frame(.ri = ri,
                      rorder = rorder) %>% ctx$addNamespace()
 
-list(cresult, rresult) %>% ctx$save()
+df.out<-list(cresult, rresult)
+
+df.out %>%
+  ctx$save()
+
 
