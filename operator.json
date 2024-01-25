@@ -1,6 +1,6 @@
 {
   "name": "Heatmap Clustering",
-  "description": "Order rows and columns of a heatmap based on their similarities, using a hierarchical clustering algorithm.",
+  "description": "Orders rows and columns of a heatmap based on their similarities, using a hierarchical clustering algorithm.",
   "tags": [
     "data visualisation",
     "clustering"
