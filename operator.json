@@ -1,43 +1,60 @@
 {
   "name": "Heatmap Clustering",
   "description": "Order rows and columns of a heatmap based on their similarities, using a hierarchical clustering algorithm.",
-  "tags": ["multivariate statistics","clustering"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/hclust_operator"],
+  "tags": [
+    "data visualisation",
+    "clustering"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/hclust_operator"
+  ],
   "properties": [
-  {
-    "kind": "BooleanProperty",
-    "name": "scale",
-    "defaultValue": false,
-    "description": "A logical value indicating whether the variables should be scaled to have unit variance before the analysis takes place."
-  },
-  {
-    "kind": "BooleanProperty",
-    "name": "center",
-    "defaultValue": false,
-    "description": "A logical value indicating whether the variables should be shifted to be zero centered."
-  },
-  {
-    "kind": "EnumeratedProperty",
-    "name": "method",
-    "defaultValue": "single",
-    "values": ["single", "ward", "centroid", "median"],
-    "description": "A value specifying the clustering method to be used (see hclust R function)."
-  },
-  {
-    "kind": "EnumeratedProperty",
-    "name": "metric",
-    "defaultValue": "euclidean",
-    "values": ["euclidean", "maximum", "manhattan", "canberra", "binary", "minkowski"],
-    "description": "A value specifying the metric to be used (see hclust R function)."
-  },
-  {
-    "kind": "DoubleProperty",
-    "name": "fill",
-    "defaultValue": 0.0,
-    "description": "Value with which to fill in structural missings."
-  }
-]
+    {
+      "kind": "BooleanProperty",
+      "name": "scale",
+      "defaultValue": false,
+      "description": "A logical value indicating whether the variables should be scaled to have unit variance before the analysis takes place."
+    },
+    {
+      "kind": "BooleanProperty",
+      "name": "center",
+      "defaultValue": false,
+      "description": "A logical value indicating whether the variables should be shifted to be zero centered."
+    },
+    {
+      "kind": "EnumeratedProperty",
+      "name": "method",
+      "defaultValue": "single",
+      "values": [
+        "single",
+        "ward",
+        "centroid",
+        "median"
+      ],
+      "description": "A value specifying the clustering method to be used (see hclust R function)."
+    },
+    {
+      "kind": "EnumeratedProperty",
+      "name": "metric",
+      "defaultValue": "euclidean",
+      "values": [
+        "euclidean",
+        "maximum",
+        "manhattan",
+        "canberra",
+        "binary",
+        "minkowski"
+      ],
+      "description": "A value specifying the metric to be used (see hclust R function)."
+    },
+    {
+      "kind": "DoubleProperty",
+      "name": "fill",
+      "defaultValue": 0,
+      "description": "Value with which to fill in structural missings."
+    }
+  ]
 }
-
-
