@@ -70,7 +70,7 @@
             "name": "Row Data",
             "type": "",
             "description": "Represents the row data",
-            "ontologyMapping": "row",
+            "ontologyMapping": "variable",
             "crosstabMapping": "row",
             "cardinality": "1..n",
             "factors": []
@@ -80,7 +80,7 @@
             "name": "Column Data",
             "type": "",
             "description": "Represents the column data",
-            "ontologyMapping": "column",
+            "ontologyMapping": "observation",
             "crosstabMapping": "column",
             "cardinality": "1..n",
             "factors": []
